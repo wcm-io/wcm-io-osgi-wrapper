@@ -38,9 +38,9 @@
   <description>Parent POM for OSGi Wrapper Bundles.</description>
 
   <scm>
-    <connection>scm:git:https://github.com/wcm-io/wcm-io.git</connection>
-    <developerConnection>scm:git:https://github.com/wcm-io/wcm-io.git</developerConnection>
-    <url>https://github.com/wcm-io/wcm-io</url>
+    <connection>scm:git:https://github.com/wcm-io/wcm-io-osgi-wrapper.git</connection>
+    <developerConnection>scm:git:https://github.com/wcm-io/wcm-io-osgi-wrapper.git</developerConnection>
+    <url>https://github.com/wcm-io/wcm-io-osgi-wrapper</url>
     <tag>HEAD</tag>
   </scm>
 
