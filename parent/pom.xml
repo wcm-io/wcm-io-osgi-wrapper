@@ -25,7 +25,7 @@
   <parent>
     <groupId>io.wcm.maven</groupId>
     <artifactId>io.wcm.maven.aem-global-parent</artifactId>
-    <version>1.0.13-SNAPSHOT</version>
+    <version>1.0.14</version>
     <relativePath />
   </parent>
 
@@ -55,6 +55,19 @@
         <configuration>
           <skip>true</skip>
           <skipDeploy>true</skipDeploy>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>external.atlassian.jgitflow</groupId>
+        <artifactId>jgitflow-maven-plugin</artifactId>
+        <configuration>
+          <!-- Prefix release numbers with artifactId for GIT repo with more than one released artifact -->
+          <flowInitContext>
+            <releaseBranchPrefix>release/${project.artifactId}-</releaseBranchPrefix>
+            <hotfixBranchPrefix>hotfix/${project.artifactId}-</hotfixBranchPrefix>
+            <versionTagPrefix>${project.artifactId}-</versionTagPrefix>
+          </flowInitContext>
         </configuration>
       </plugin>
 
