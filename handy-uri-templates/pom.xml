@@ -25,7 +25,7 @@
   <parent>
     <groupId>io.wcm.osgi.wrapper</groupId>
     <artifactId>io.wcm.osgi.wrapper.parent</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <relativePath>../parent/pom.xml</relativePath>
   </parent>
 
@@ -81,25 +81,6 @@
               *
             </Import-Package>
           </instructions>
-        </configuration>
-      </plugin>
-
-      <!-- Do not generate eclipse project files -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-eclipse-plugin</artifactId>
-        <inherited>true</inherited>
-        <configuration>
-          <skip>true</skip>
-        </configuration>
-      </plugin>
-
-      <!-- Do not deploy sources to repository -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-source-plugin</artifactId>
-        <configuration>
-          <attach>false</attach>
         </configuration>
       </plugin>
 

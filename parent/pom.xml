@@ -25,13 +25,13 @@
   <parent>
     <groupId>io.wcm.maven</groupId>
     <artifactId>io.wcm.maven.aem-global-parent</artifactId>
-    <version>1.0.12</version>
+    <version>1.0.14</version>
     <relativePath />
   </parent>
 
   <groupId>io.wcm.osgi.wrapper</groupId>
   <artifactId>io.wcm.osgi.wrapper.parent</artifactId>
-  <version>1.0.1-SNAPSHOT</version>
+  <version>1.0.2</version>
   <packaging>pom</packaging>
 
   <name>OSGi Wrapper Parent</name>
@@ -47,6 +47,51 @@
   <inceptionYear>2014</inceptionYear>
 
   <build>
+    <plugins>
+    
+      <!-- Do not generate eclipse project files -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-eclipse-plugin</artifactId>
+        <inherited>true</inherited>
+        <configuration>
+          <skip>true</skip>
+        </configuration>
+      </plugin>
+
+      <!-- Do not deploy sources to repository -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <configuration>
+          <attach>false</attach>
+        </configuration>
+      </plugin>
+
+      <!-- Do not generate site -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <configuration>
+          <skip>true</skip>
+          <skipDeploy>true</skipDeploy>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>external.atlassian.jgitflow</groupId>
+        <artifactId>jgitflow-maven-plugin</artifactId>
+        <configuration>
+          <!-- Prefix release numbers with artifactId for GIT repo with more than one released artifact -->
+          <flowInitContext>
+            <releaseBranchPrefix>release/${project.artifactId}-</releaseBranchPrefix>
+            <hotfixBranchPrefix>hotfix/${project.artifactId}-</hotfixBranchPrefix>
+            <versionTagPrefix>${project.artifactId}-</versionTagPrefix>
+          </flowInitContext>
+        </configuration>
+      </plugin>
+
+    </plugins>
     <pluginManagement>
       <plugins>
 
@@ -62,7 +107,6 @@
         </plugin>
 
       </plugins>
-
     </pluginManagement>
   </build>
 
@@ -70,6 +114,12 @@
     <!-- profile used for building releases and deployment to sonatype/maven central -->
     <profile>
       <id>release</id>
+      <activation>
+        <property>
+          <name>performRelease</name>
+          <value>true</value>
+        </property>
+      </activation>
       <build>
         <plugins>
           <!-- sign the build -->

@@ -25,7 +25,7 @@
   <parent>
     <groupId>io.wcm.osgi.wrapper</groupId>
     <artifactId>io.wcm.osgi.wrapper.parent</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <relativePath>../parent/pom.xml</relativePath>
   </parent>
 
@@ -119,6 +119,16 @@
             </Import-Package>
             <Bundle-Activator>io.wcm.osgi.wrapper.hibernate.validator.impl.Activator</Bundle-Activator>
           </instructions>
+        </configuration>
+      </plugin>
+
+      <!-- Generate eclipse project files -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-eclipse-plugin</artifactId>
+        <inherited>true</inherited>
+        <configuration>
+          <skip>false</skip>
         </configuration>
       </plugin>
 
