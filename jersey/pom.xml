@@ -30,13 +30,13 @@
   </parent>
 
   <properties>
-    <pkgVersion>2.17</pkgVersion>
+    <pkgVersion>2.20</pkgVersion>
     <osgiVersion>${pkgVersion}</osgiVersion>
   </properties>
 
   <groupId>io.wcm.osgi.wrapper</groupId>
   <artifactId>io.wcm.osgi.wrapper.jersey</artifactId>
-  <version>2.17-0001-SNAPSHOT</version>
+  <version>2.20-0000-SNAPSHOT</version>
   <packaging>bundle</packaging>
   <name>Jersey</name>
 
@@ -156,6 +156,10 @@
               jersey.repackaged.com.google.common.collect.ImmutableMultiset.jersey.repackaged.com.google.common.collect.*;resolution:=optional,
               jersey.repackaged.com.google.common.collect.MapMakerInternalMap.jersey.repackaged.com.google.common.collect.*;resolution:=optional,
               jersey.repackaged.com.google.common.collect.StandardTable.jersey.repackaged.com.google.common.collect.*;resolution:=optional,
+              jersey.repackaged.com.google.common.collect.AbstractMultimap.jersey.repackaged.com.google.common.collect;resolution:=optional,
+              jersey.repackaged.com.google.common.collect.FilteredKeyMultimap.jersey.repackaged.com.google.common.collect;resolution:=optional,
+              jersey.repackaged.com.google.common.collect.ImmutableMultimap.jersey.repackaged.com.google.common.collect;resolution:=optional,
+              jersey.repackaged.com.google.common.collect.Maps$FilteredEntryMap.jersey.repackaged.com.google.common.collect;resolution:=optional,
               *
             </Import-Package>
           </instructions>
