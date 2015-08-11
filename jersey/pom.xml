@@ -47,6 +47,14 @@
     <url>https://jersey.java.net/</url>
   </organization>
 
+  <licenses>
+    <license>
+      <name>CDDL+GPL License</name>
+      <url>http://glassfish.java.net/public/CDDL+GPL_1_1.html</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+    
   <scm>
     <connection>scm:git:https://github.com/wcm-io/wcm-io-osgi-wrapper.git</connection>
     <developerConnection>scm:git:https://github.com/wcm-io/wcm-io-osgi-wrapper.git</developerConnection>
