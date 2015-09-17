@@ -30,7 +30,7 @@
   </parent>
 
   <properties>
-    <pkgVersion>2.0.3-SNAPSHOT</pkgVersion>
+    <pkgVersion>2.0.3</pkgVersion>
     <osgiVersion>${pkgVersion}</osgiVersion>
   </properties>
 
