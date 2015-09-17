@@ -36,7 +36,7 @@
 
   <groupId>io.wcm.osgi.wrapper</groupId>
   <artifactId>io.wcm.osgi.wrapper.rxjava</artifactId>
-  <version>1.0.14-0000</version>
+  <version>1.0.14-0001-SNAPSHOT</version>
   <packaging>bundle</packaging>
   <name>rxjava</name>
 
