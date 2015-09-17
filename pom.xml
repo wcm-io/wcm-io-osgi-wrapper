@@ -40,7 +40,6 @@
   <modules>
     <module>parent</module>
     <module>handlebars</module>
-    <module>handy-uri-templates</module>
     <module>hibernate-validator</module>
     <module>jersey</module>
     <module>mustache-compiler</module>
