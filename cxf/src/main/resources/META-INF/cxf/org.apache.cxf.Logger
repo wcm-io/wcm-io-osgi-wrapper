@@ -1,1 +1,1 @@
-io.wcm.wrapper.cxf.logging.SlingCompatibleSlf4jLogger
+org.apache.cxf.common.logging.Slf4jLogger

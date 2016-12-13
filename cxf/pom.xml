@@ -252,16 +252,6 @@
         </configuration>
       </plugin>
 
-      <!-- Generate eclipse project files -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-eclipse-plugin</artifactId>
-        <inherited>true</inherited>
-        <configuration>
-          <skip>false</skip>
-        </configuration>
-      </plugin>
-
     </plugins>
   </build>
 
