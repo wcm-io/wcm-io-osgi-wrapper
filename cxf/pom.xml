@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  #%L
+  wcm.io
+  %%
+  Copyright (C) 2016 wcm.io
+  %%
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  #L%
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>io.wcm.osgi.wrapper</groupId>
+    <artifactId>io.wcm.osgi.wrapper.parent</artifactId>
+    <version>1.0.2</version>
+    <relativePath>../parent/pom.xml</relativePath>
+  </parent>
+
+  <properties>
+    <pkgArtifactId>cxf</pkgArtifactId>
+    <pkgVersion>2.7.8</pkgVersion>
+    <pomVersion>0000</pomVersion>
+    <osgiVersion>${pkgVersion}</osgiVersion>
+    <javax.ws.rs.version>2.0.0.m10</javax.ws.rs.version>
+  </properties>
+
+  <groupId>io.wcm.osgi.wrapper</groupId>
+  <artifactId>io.wcm.osgi.wrapper.cxf</artifactId>
+  <version>2.7.8-0000-SNAPSHOT</version>
+  <packaging>bundle</packaging>
+  <name>Apache CXF</name>
+
+  <description>
+    Apache CXF: An Open-Source Services Framework. Includes dependencies for JAX-WS/SOAP bindings.
+  </description>
+  <organization>
+    <url>http://cxf.apache.org/</url>
+  </organization>
+
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
+
+  <scm>
+    <connection>scm:git:https://github.com/wcm-io/wcm-io-osgi-wrapper.git</connection>
+    <developerConnection>scm:git:https://github.com/wcm-io/wcm-io-osgi-wrapper.git</developerConnection>
+    <url>https://github.com/wcm-io/wcm-io-osgi-wrapper</url>
+    <tag>HEAD</tag>
+  </scm>
+
+  <dependencies>
+
+    <!-- Apache CXF Dependencies -->
+    <dependency>
+      <groupId>org.apache.cxf</groupId>
+      <artifactId>cxf-rt-frontend-jaxws</artifactId>
+      <version>${pkgVersion}</version>
+      <scope>compile</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>commons-logging</groupId>
+          <artifactId>commons-logging</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>commons-lang</groupId>
+          <artifactId>commons-lang</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.apache.geronimo.specs</groupId>
+          <artifactId>geronimo-javamail_1.4_spec</artifactId>
+        </exclusion>
+        <!-- exclude spring dependencies -->
+        <exclusion>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-aop</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-asm</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-beans</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-context</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-core</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-expression</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-web</artifactId>
+        </exclusion>
+        <!-- this is included in JDK 1.6 by default -->
+        <exclusion>
+          <groupId>com.sun.xml.bind</groupId>
+          <artifactId>jaxb-impl</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.cxf</groupId>
+      <artifactId>cxf-rt-frontend-jaxrs</artifactId>
+      <version>${pkgVersion}</version>
+      <scope>compile</scope>
+      <exclusions>
+        <!-- exclude spring dependencies -->
+        <exclusion>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-asm</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-core</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.cxf</groupId>
+      <artifactId>cxf-rt-transports-http</artifactId>
+      <version>${pkgVersion}</version>
+      <scope>compile</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>commons-logging</groupId>
+          <artifactId>commons-logging</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>commons-lang</groupId>
+          <artifactId>commons-lang</artifactId>
+        </exclusion>
+        <!-- exclude spring dependencies -->
+        <exclusion>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-aop</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-asm</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-beans</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-context</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-core</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-expression</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-web</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.5.11</version>
+      <scope>provided</scope>
+    </dependency>
+
+  </dependencies>
+  <build>
+    <plugins>
+
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <configuration>
+          <instructions>
+
+            <!-- Do not inline jars, include as jar files -->
+            <Embed-Dependency>*;scope=compile|runtime;inline=false</Embed-Dependency>
+            <Embed-Transitive>true</Embed-Transitive>
+
+            <!-- use _exportcontents instead of Export-Package to avoid conflict with Embed-Dependency an inline=true -->
+            <_exportcontents>
+              org.apache.cxf.*;version=${pkgVersion},
+              javax.ws.rs.*;version=${javax.ws.rs.version}
+            </_exportcontents>
+
+            <!-- declare optional dependencies -->
+            <Import-Package>
+              javax.activation;version=1.1.1,
+              com.sun.msv.*;resolution:=optional,
+              com.sun.tools.xjc.*;resolution:=optional,
+              com.sun.xml.bind.marshaller.*;resolution:=optional,
+              com.sun.xml.fastinfoset.stax.*;resolution:=optional,
+              com.wordnik.swagger.jaxrs.*;resolution:=optional,
+              net.sf.cglib.*;resolution:=optional,
+              org.apache.aries.*;resolution:=optional,
+              org.apache.axiom.*;resolution:=optional,
+              org.apache.cxf.tools.*;resolution:=optional,
+              org.apache.mina.*;resolution:=optional,
+              org.apache.log4j.spi.*;resolution:=optional,
+              org.osgi.service.blueprint.*;resolution:=optional,
+              org.junit.*;resolution:=optional,
+              org.relaxng.*;resolution:=optional,
+              org.slf4j.spi.*;resolution:=optional,
+              org.springframework.*;resolution:=optional,
+              javax.xml.ws.spi.http.*;resolution:=optional,
+              javax.mail.*;resolution:=optional,
+              javax.servlet.descriptor.*;resolution:=optional,
+              junit.framework.*;resolution:=optional,
+              *
+            </Import-Package>
+
+          </instructions>
+        </configuration>
+      </plugin>
+
+      <!-- Generate eclipse project files -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-eclipse-plugin</artifactId>
+        <inherited>true</inherited>
+        <configuration>
+          <skip>false</skip>
+        </configuration>
+      </plugin>
+
+    </plugins>
+  </build>
+
+</project>
