@@ -30,13 +30,13 @@
   </parent>
 
   <properties>
-    <pkgVersion>2.2.3</pkgVersion>
+    <pkgVersion>4.0.6</pkgVersion>
     <osgiVersion>${pkgVersion}</osgiVersion>
   </properties>
 
   <groupId>io.wcm.osgi.wrapper</groupId>
   <artifactId>io.wcm.osgi.wrapper.handlebars</artifactId>
-  <version>2.2.3-0001-SNAPSHOT</version>
+  <version>4.0.6-0000-SNAPSHOT</version>
   <packaging>bundle</packaging>
   <name>Handlebars</name>
 
