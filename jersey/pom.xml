@@ -25,7 +25,8 @@
   <parent>
     <groupId>io.wcm.osgi.wrapper</groupId>
     <artifactId>io.wcm.osgi.wrapper.parent</artifactId>
-    <version>1.0.4</version>
+    <!-- stick with version 1.0.2 because 1.0.4 includes latest bndlib/maven-bundle-plugin which behaves differently with transient deps of jersey - not yet checked what is the source of the problem -->
+    <version>1.0.2</version>
     <relativePath>../parent/pom.xml</relativePath>
   </parent>
 
