@@ -31,14 +31,14 @@
 
   <properties>
     <pkgArtifactId>cxf</pkgArtifactId>
-    <pkgVersion>3.1.9</pkgVersion>
+    <pkgVersion>3.1.10</pkgVersion>
     <pomVersion>0000</pomVersion>
     <osgiVersion>${pkgVersion}</osgiVersion>
   </properties>
 
   <groupId>io.wcm.osgi.wrapper</groupId>
   <artifactId>io.wcm.osgi.wrapper.cxf</artifactId>
-  <version>3.1.9-0001-SNAPSHOT</version>
+  <version>3.1.10-0000-SNAPSHOT</version>
   <packaging>bundle</packaging>
   <name>Apache CXF</name>
 
