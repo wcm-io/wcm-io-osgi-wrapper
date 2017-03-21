@@ -3,7 +3,7 @@
   #%L
   wcm.io
   %%
-  Copyright (C) 2016 wcm.io
+  Copyright (C) 2017 wcm.io
   %%
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -34,16 +34,17 @@
     <pkgVersion>3.1.10</pkgVersion>
     <pomVersion>0000</pomVersion>
     <osgiVersion>${pkgVersion}</osgiVersion>
+    <wss4jVersion>2.1.8</wss4jVersion>
   </properties>
 
   <groupId>io.wcm.osgi.wrapper</groupId>
-  <artifactId>io.wcm.osgi.wrapper.cxf</artifactId>
+  <artifactId>io.wcm.osgi.wrapper.cxf-with-security</artifactId>
   <version>3.1.10-0000-SNAPSHOT</version>
   <packaging>bundle</packaging>
-  <name>Apache CXF</name>
+  <name>Apache CXF with Security</name>
 
   <description>
-    Apache CXF: An Open-Source Services Framework. Includes dependencies for JAX-WS/SOAP bindings.
+    Apache CXF: An Open-Source Services Framework. Includes dependencies for JAX-WS/SOAP bindings and SOAP Security.
   </description>
   <organization>
     <url>http://cxf.apache.org/</url>
@@ -118,6 +119,42 @@
         </exclusion>
       </exclusions>
     </dependency>
+    <dependency>
+      <groupId>org.apache.cxf</groupId>
+      <artifactId>cxf-rt-ws-security</artifactId>
+      <version>${pkgVersion}</version>
+      <scope>compile</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>commons-logging</groupId>
+          <artifactId>commons-logging</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>commons-lang</groupId>
+          <artifactId>commons-lang</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>commons-codec</groupId>
+          <artifactId>commons-codec</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.springframework</groupId>
+          <artifactId>*</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>net.sf.ehcache</groupId>
+          <artifactId>ehcache</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.opensaml</groupId>
+          <artifactId>*</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.apache.geronimo.specs</groupId>
+          <artifactId>geronimo-javamail_1.4_spec</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
 
     <dependency>
       <groupId>org.slf4j</groupId>
@@ -142,7 +179,8 @@
 
             <!-- use _exportcontents instead of Export-Package to avoid conflict with Embed-Dependency an inline=true -->
             <_exportcontents>
-              org.apache.cxf.*;version=${osgiVersion}
+              org.apache.cxf.*;version=${osgiVersion},
+              org.apache.wss4j.*;version=${wss4jVersion}
             </_exportcontents>
 
             <!-- declare optional dependencies -->
@@ -164,6 +202,15 @@
               javax.xml.ws.spi.http.*;resolution:=optional,
               javax.validation.*;resolution:=optional,
               org.apache.xerces.*;resolution:=optional,
+              com.ibm.icu.*;resolution:=optional,
+              net.sf.ehcache.*;resolution:=optional,
+              org.apache.cxf.ws.mex.*;resolution:=optional,
+              org.apache.directory.*;resolution:=optional,
+              org.opensaml.*;resolution:=optional,
+              org.apache.xml.*;resolution:=optional,
+              org.apache.xpath.*;resolution:=optional,
+              org.bouncycastle.*;resolution:=optional,
+              net.shibboleth.*;resolution:=optional,
               *
             </Import-Package>
 
