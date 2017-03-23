@@ -38,7 +38,7 @@
 
   <groupId>io.wcm.osgi.wrapper</groupId>
   <artifactId>io.wcm.osgi.wrapper.cxf</artifactId>
-  <version>3.1.10-0001-SNAPSHOT</version>
+  <version>3.1.10-0000</version>
   <packaging>bundle</packaging>
   <name>Apache CXF</name>
 
