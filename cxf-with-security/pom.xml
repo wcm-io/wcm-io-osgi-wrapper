@@ -39,7 +39,7 @@
 
   <groupId>io.wcm.osgi.wrapper</groupId>
   <artifactId>io.wcm.osgi.wrapper.cxf-with-security</artifactId>
-  <version>3.1.10-0000-SNAPSHOT</version>
+  <version>3.1.10-0000</version>
   <packaging>bundle</packaging>
   <name>Apache CXF with Security</name>
 
