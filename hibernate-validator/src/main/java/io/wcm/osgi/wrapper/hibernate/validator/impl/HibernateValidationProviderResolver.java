@@ -25,10 +25,12 @@ import java.util.List;
 import javax.validation.ValidationProviderResolver;
 import javax.validation.spi.ValidationProvider;
 
+import org.apache.felix.scr.annotations.Component;
+import org.apache.felix.scr.annotations.Service;
 import org.hibernate.validator.HibernateValidator;
-import org.osgi.service.component.annotations.Component;
 
-@Component(service = ValidationProviderResolver.class)
+@Component
+@Service(ValidationProviderResolver.class)
 public class HibernateValidationProviderResolver implements ValidationProviderResolver {
 
   @Override

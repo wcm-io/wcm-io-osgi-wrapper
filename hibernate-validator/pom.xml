@@ -25,7 +25,8 @@
   <parent>
     <groupId>io.wcm.osgi.wrapper</groupId>
     <artifactId>io.wcm.osgi.wrapper.parent</artifactId>
-    <version>1.0.4</version>
+    <!-- stick with version 1.0.2 because 1.0.4 includes latest bndlib/maven-bundle-plugin which behaves differently with transient deps of jersey - not yet checked what is the source of the problem -->
+    <version>1.0.2</version>
     <relativePath>../parent/pom.xml</relativePath>
   </parent>
 
@@ -104,11 +105,11 @@
             <!-- Do not inline jars, include as jar files -->
             <!-- Except hibernate validator itself to allow java.util.ServiceLoader detection -->
             <Embed-Dependency>
-              *;scope=compile|runtime;inline=true;groupId=org.hibernate;artifactId=hibernate-validator,
-              *;scope=compile|runtime;inline=false;groupId=org.jboss.logging;artifactId=jboss-logging,
-              *;scope=compile|runtime;inline=false;groupId=com.fasterxml;artifactId=classmate,
-              *;scope=compile|runtime;inline=false;groupId=javax.el;artifactId=javax.el-api,
-              *;scope=compile|runtime;inline=false;groupId=org.glassfish.web;artifactId=javax.el
+              *;scope=compile;inline=true;groupId=org.hibernate;artifactId=hibernate-validator,
+              *;scope=compile;inline=false;groupId=org.jboss.logging;artifactId=jboss-logging,
+              *;scope=compile;inline=false;groupId=com.fasterxml;artifactId=classmate,
+              *;scope=compile;inline=false;groupId=javax.el;artifactId=javax.el-api,
+              *;scope=compile;inline=false;groupId=org.glassfish.web;artifactId=javax.el
             </Embed-Dependency>
             <Embed-Transitive>true</Embed-Transitive>
             <!-- use _exportcontents instead of Export-Package to avoid conflict with Embed-Dependency an inline=true -->
@@ -120,11 +121,11 @@
               javax.persistence.*;resolution:=optional,
               javax.money.*;resolution:=optional,
               javafx.beans.value.*;resolution:=optional,
-              org.jboss.logging.*;resolution:=optional,
+              org.apache.logging.log4j.*;resolution:=optional,
+              org.jboss.logmanager.*;resolution:=optional,
               org.joda.time.*;resolution:=optional,
               org.jsoup.*;resolution:=optional,
               com.thoughtworks.paranamer.*;resolution:=optional,
-              com.fasterxml.classmate.*;resolution:=optional,
               *
             </Import-Package>
             <Bundle-Activator>io.wcm.osgi.wrapper.hibernate.validator.impl.Activator</Bundle-Activator>
