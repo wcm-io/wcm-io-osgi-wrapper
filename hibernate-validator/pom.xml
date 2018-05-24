@@ -128,7 +128,6 @@
               com.thoughtworks.paranamer.*;resolution:=optional,
               *
             </Import-Package>
-            <Bundle-Activator>io.wcm.osgi.wrapper.hibernate.validator.impl.Activator</Bundle-Activator>
           </instructions>
         </configuration>
       </plugin>
