@@ -19,9 +19,6 @@
  */
 package io.wcm.osgi.wrapper.hibernate.validator.impl;
 
-import java.util.Locale;
-
-import org.hibernate.validator.internal.engine.messageinterpolation.InterpolationTerm;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
@@ -32,6 +29,7 @@ public class Activator implements BundleActivator {
 
   @Override
   public void start(BundleContext context) throws Exception {
+    /*  -- TODO: disabled - probably no longer neede for latest hibernate validator version --
     ClassLoader tccl = Thread.currentThread().getContextClassLoader();
     Thread.currentThread().setContextClassLoader(this.getClass().getClassLoader());
     try {
@@ -41,6 +39,7 @@ public class Activator implements BundleActivator {
     finally {
       Thread.currentThread().setContextClassLoader(tccl);
     }
+    */
   }
 
   @Override
