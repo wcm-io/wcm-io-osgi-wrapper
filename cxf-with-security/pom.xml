@@ -25,7 +25,7 @@
   <parent>
     <groupId>io.wcm.osgi.wrapper</groupId>
     <artifactId>io.wcm.osgi.wrapper.parent</artifactId>
-    <version>1.0.4</version>
+    <version>1.0.5-SNAPSHOT</version>
     <relativePath>../parent/pom.xml</relativePath>
   </parent>
 
@@ -39,7 +39,7 @@
 
   <groupId>io.wcm.osgi.wrapper</groupId>
   <artifactId>io.wcm.osgi.wrapper.cxf-with-security</artifactId>
-  <version>3.1.10-0000</version>
+  <version>3.1.10-0001-SNAPSHOT</version>
   <packaging>bundle</packaging>
   <name>Apache CXF with Security</name>
 

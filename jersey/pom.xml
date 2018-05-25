@@ -25,19 +25,18 @@
   <parent>
     <groupId>io.wcm.osgi.wrapper</groupId>
     <artifactId>io.wcm.osgi.wrapper.parent</artifactId>
-    <!-- stick with version 1.0.2 because 1.0.4 includes latest bndlib/maven-bundle-plugin which behaves differently with transient deps of jersey - not yet checked what is the source of the problem -->
-    <version>1.0.2</version>
+    <version>1.0.5-SNAPSHOT</version>
     <relativePath>../parent/pom.xml</relativePath>
   </parent>
 
   <properties>
-    <pkgVersion>2.22</pkgVersion>
+    <pkgVersion>2.27</pkgVersion>
     <osgiVersion>${pkgVersion}</osgiVersion>
   </properties>
 
   <groupId>io.wcm.osgi.wrapper</groupId>
   <artifactId>io.wcm.osgi.wrapper.jersey</artifactId>
-  <version>2.22-0001-SNAPSHOT</version>
+  <version>2.27-0000-SNAPSHOT</version>
   <packaging>bundle</packaging>
   <name>Jersey</name>
 
@@ -125,6 +124,17 @@
         </exclusion>
       </exclusions>
     </dependency>
+    <dependency>
+      <groupId>org.glassfish.jersey.inject</groupId>
+      <artifactId>jersey-hk2</artifactId>
+      <version>${pkgVersion}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.glassfish.hk2.external</groupId>
+          <artifactId>javax.inject</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
   </dependencies>
 
   <build>
@@ -150,7 +160,7 @@
             <Import-Package>
               javax.persistence.*;resolution:=optional,
               javax.servlet.annotation.*;resolution:=optional,
-              com.sun.jdi.*;resolution:=optional,
+              com.sun.*;resolution:=optional,
               sun.misc.*;resolution:=optional,
               jersey.repackaged.com.google.common.cache.LocalCache.jersey.repackaged.com.google.common.cache.*;resolution:=optional,
               jersey.repackaged.com.google.common.collect.AbstractMapBasedMultimap.jersey.repackaged.com.google.common.collect.*;resolution:=optional,
