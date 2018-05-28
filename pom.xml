@@ -41,6 +41,7 @@
     <module>parent</module>
     <module>cxf</module>
     <module>cxf-with-security</module>
+    <module>gson</module>
     <module>handlebars</module>
     <module>hibernate-validator</module>
     <module>jersey</module>
