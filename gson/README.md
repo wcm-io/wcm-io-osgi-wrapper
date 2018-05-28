@@ -16,4 +16,4 @@ Please note that the problem occurs only if the Gson library is part of an AEM p
 
 If you want to deploy an updated Gson library in AEM 6.3 via AEM content packages you need to change the line `uninstall com.google.gson` to something like `uninstall com.google.gson [0,2.8.3]` to exclude your version.
 
-If you want or cannot change these lines on all your instances you can use this wrapper library: `io.wcm.osgi.wrapper:io.wcm.osgi.wrapper.gson'.
+If you want or cannot change these lines on all your instances you can use this wrapper library: `io.wcm.osgi.wrapper:io.wcm.osgi.wrapper.gson`.
