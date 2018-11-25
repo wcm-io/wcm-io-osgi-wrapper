@@ -46,7 +46,10 @@
     <module>hibernate-validator</module>
     <module>jersey</module>
     <module>mustache-compiler</module>
+    <module>reactive-streams</module>
     <module>rxjava</module>
+    <module>rxjava2</module>
+    <module>rxjava2-interop</module>
   </modules>
 
   <build>
