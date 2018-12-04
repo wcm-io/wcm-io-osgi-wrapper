@@ -3,7 +3,7 @@
   #%L
   wcm.io
   %%
-  Copyright (C) 2014 wcm.io
+  Copyright (C) 2018 wcm.io
   %%
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -30,13 +30,13 @@
   </parent>
 
   <properties>
-    <pkgVersion>1.0.14</pkgVersion>
+    <pkgVersion>1.3.8</pkgVersion>
     <osgiVersion>${pkgVersion}</osgiVersion>
   </properties>
 
   <groupId>io.wcm.osgi.wrapper</groupId>
   <artifactId>io.wcm.osgi.wrapper.rxjava</artifactId>
-  <version>1.0.14-0001-SNAPSHOT</version>
+  <version>1.3.8-0000</version>
   <packaging>bundle</packaging>
   <name>rxjava</name>
 
