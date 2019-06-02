@@ -44,7 +44,7 @@
     Implementation of mustache.js for Java
   </description>
   <organization>
-    <url>http://github.com/spullara/mustache.java</url>
+    <url>https://github.com/spullara/mustache.java</url>
   </organization>
 
   <licenses>
