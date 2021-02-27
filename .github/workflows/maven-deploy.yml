@@ -1,4 +1,4 @@
-# Deploy snapshots to Sonatpe OSS repository
+# Deploy snapshots to Sonatpe OSS repository and deploy site to GitHub Pages
 
 name: Deploy
 
@@ -39,9 +39,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
 
-      # Build, deploy to ossrh, deploy site to Github Pages, generate and stage site
+      # Build, deploy to ossrh
       - name: Build, verify, deploy, generate site
         env:
           SONATYPE_USERNAME: ${{ secrets.SONATYPE_USERNAME }}
           SONATYPE_PASSWORD: ${{ secrets.SONATYPE_PASSWORD }}
-        run: mvn -s ./.maven-settings.xml -Pcontinuous-integration -B -U clean deploy site
+        run: mvn -s ./.maven-settings.xml -Pcontinuous-integration -B -U clean deploy
